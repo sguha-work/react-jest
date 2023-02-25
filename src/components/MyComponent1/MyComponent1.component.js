@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-function MyComponent1(props) {
+function MyComponent1({taskList, setTaskList}) {
     const [task, setTask]=useState('');
     
     const addTask = ()=>{
-        let taskList = [...props.taskList];
-        taskList.push(task);
-        props.setTaskList(taskList);
+        let tempTaskList = [...taskList];
+        tempTaskList.push(task);
+        setTaskList(tempTaskList);
     } 
     useEffect(()=>{
         
